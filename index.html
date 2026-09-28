@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elvyn Automation | Stop losing plumbing jobs to missed calls</title>
+<meta name="description" content="Elvyn Automation installs a follow-up system for plumbing companies in New Jersey. Missed call text back, booking, estimate follow-up, and reviews, all automatic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2440; --steel:#5B6670; --line:#D5DBE1; --paper:#EEF1F4; --white:#FFFFFF;
+  --tape:#F2C230; --tape-dark:#6B5207; --red:#C8392B; --green:#1F7A4D;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--navy);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tape);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+header.top{border-bottom:1px solid var(--line);background:var(--white)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:20px;letter-spacing:-.01em;text-decoration:none}
+.logo span{font-weight:500;font-stretch:100%;color:var(--steel)}
+.btn{display:inline-block;font-family:var(--display);font-weight:800;font-stretch:105%;font-size:17px;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid var(--navy);cursor:pointer;line-height:1.1}
+.btn-primary{background:var(--tape);color:var(--navy);border-color:var(--tape)}
+.btn-primary:hover{background:#E5B31E;border-color:#E5B31E}
+.btn-ghost{background:transparent;color:var(--navy)}
+.btn-ghost:hover{background:var(--paper)}
+.btn-small{padding:10px 16px;font-size:15px}
+
+.hero{background:var(--paper);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:80px}
+.hero h1{font-family:var(--display);font-weight:900;font-stretch:78%;font-size:clamp(46px,7vw,88px);line-height:.92;letter-spacing:-.02em;margin:0 0 24px}
+.hero p.lede{font-size:19px;max-width:34em;margin:0 0 32px;color:#23364F}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+.log{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 0 var(--line)}
+.log-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
+.log-head strong{font-family:var(--display);font-weight:800;font-size:18px}
+.log-head span{font-size:14px;color:var(--steel)}
+.ev{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:10px 0}
+.ev time{font-size:14px;color:var(--steel);padding-top:2px;font-variant-numeric:tabular-nums}
+.ev .what{font-size:15px}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:2px 8px;border-radius:4px;margin-bottom:4px}
+.tag.missed{background:#FBE3E0;color:#7A1F16}
+.tag.auto{background:#FDF3CF;color:var(--tape-dark)}
+.tag.reply{background:var(--paper);color:var(--navy)}
+.tag.booked{background:#DDF1E6;color:#124A2F}
+.bubble{background:var(--paper);border-radius:10px;padding:10px 12px;margin-top:4px;font-size:15px;line-height:1.45}
+.bubble.out{background:var(--navy);color:var(--white)}
+.log-foot{border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:14px;color:var(--steel)}
+@media (prefers-reduced-motion:no-preference){
+  .ev{opacity:0;transform:translateY(6px);animation:in .45s ease forwards}
+  .ev:nth-child(2){animation-delay:.2s}.ev:nth-child(3){animation-delay:.9s}.ev:nth-child(4){animation-delay:1.6s}.ev:nth-child(5){animation-delay:2.3s}
+  @keyframes in{to{opacity:1;transform:none}}
+}
+
+section.block{padding:88px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:900;font-stretch:85%;font-size:clamp(34px,4.5vw,52px);line-height:1;letter-spacing:-.015em;margin:0 0 16px}
+.intro{max-width:36em;color:#23364F;margin:0 0 48px}
+
+.leaks{border-top:2px solid var(--navy)}
+.leak{display:grid;grid-template-columns:280px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.leak h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0;line-height:1.2}
+.leak p{margin:0;max-width:40em}
+
+.system{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--navy);border-left:1px solid var(--line)}
+.system li{counter-increment:s;padding:28px 24px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.system li::before{content:counter(s);display:block;font-family:var(--display);font-weight:900;font-stretch:78%;font-size:44px;line-height:1;color:var(--tape-dark);margin-bottom:14px}
+.system h3{font-family:var(--display);font-weight:800;font-size:21px;margin:0 0 8px;line-height:1.2}
+.system p{margin:0;font-size:16px;color:#23364F}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.steps h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0 0 8px}
+.steps p{margin:0;color:#23364F}
+.steps .n{font-family:var(--display);font-weight:900;font-size:15px;color:var(--steel);margin-bottom:6px;display:block}
+
+.audit{background:var(--navy);color:var(--white)}
+.audit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.audit h2{color:var(--white)}
+.audit .intro{color:#C9D3DF}
+.audit ul{padding-left:20px;margin:0;color:#C9D3DF}
+.audit li{margin-bottom:8px}
+form{background:var(--white);color:var(--navy);border-radius:14px;padding:28px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #B7C0CA;border-radius:6px;background:var(--white);color:var(--navy)}
+input:focus,select:focus{outline:3px solid var(--tape);outline-offset:0;border-color:var(--navy)}
+.consent{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.5;color:var(--steel);margin:4px 0 20px}
+.consent input{width:18px;height:18px;margin-top:2px}
+.consent a{color:var(--navy)}
+form .btn{width:100%;font-size:18px;padding:16px}
+.err{color:var(--red);font-size:14px;margin-top:6px;display:none}
+.err.show{display:block}
+.status{margin-top:14px;font-size:15px;font-weight:600}
+.status.ok{color:var(--green)}.status.bad{color:var(--red)}
+
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq details:first-of-type{border-top:2px solid var(--navy)}
+.faq summary{font-family:var(--display);font-weight:800;font-size:21px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:500;color:var(--steel)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:12px 0 0;max-width:44em;color:#23364F}
+
+footer{padding:40px 0;font-size:14px;color:var(--steel)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer a{margin-left:16px}
+
+@media (max-width:900px){
+  .hero .wrap,.audit .wrap{grid-template-columns:1fr;gap:40px}
+  .system{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .leak{grid-template-columns:1fr;gap:6px}
+}
+@media (max-width:560px){
+  .system{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:0}
+  section.block{padding:64px 0}
+  .hero .wrap{padding-top:48px;padding-bottom:56px}
+  header.top .btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">Elvyn <span>Automation</span></a>
+    <a class="btn btn-primary btn-small" href="#audit">Get a free audit</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>You're losing jobs you already paid for.</h1>
+      <p class="lede">Every missed call, quote that goes quiet, and past customer you never hear from again is money going to the next plumber on Google. Elvyn Automation installs a system that texts back, books, follows up, and asks for reviews on its own. You do the work. The calendar fills itself.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#audit">Get a free missed call audit</a>
+        <a class="btn btn-ghost" href="#system">See what we install</a>
+      </div>
+    </div>
+
+    <div class="log" aria-label="Example of an after-hours missed call being booked automatically">
+      <div class="log-head"><strong>Your Plumbing Co.</strong><span>Tuesday</span></div>
+      <div class="ev"><time>7:42 PM</time><div class="what"><span class="tag missed">Missed call</span><br>(201) 555-0148</div></div>
+      <div class="ev"><time>7:42 PM</time><div class="what"><span class="tag auto">Auto text sent</span><div class="bubble out">Hey, sorry we missed your call. What's going on and what's the address? We'll get you taken care of.</div></div></div>
+      <div class="ev"><time>7:46 PM</time><div class="what"><span class="tag reply">Customer replied</span><div class="bubble">Water heater leaking in the basement. 14 Maple Ave, Clifton.</div></div></div>
+      <div class="ev"><time>7:47 PM</time><div class="what"><span class="tag booked">Booked</span><br>Wednesday, 9:00 AM. Reminder scheduled.</div></div>
+      <div class="log-foot">Nobody picked up the phone. The job still got booked.</div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Where the money leaks</h2>
+    <p class="intro">Most plumbing companies don't have a lead problem. They have a follow-up problem. These are the spots where jobs fall through.</p>
+    <div class="leaks">
+      <div class="leak"><h3>After-hours calls</h3><p>Someone with water on their floor isn't leaving a voicemail. If you don't pick up, they call the next number.</p></div>
+      <div class="leak"><h3>Quotes that go quiet</h3><p>You drove out, looked at the job, and sent a number. Then nothing, because nobody followed up.</p></div>
+      <div class="leak"><h3>No-shows</h3><p>The appointment was booked, nobody reminded them, and your tech showed up to an empty house.</p></div>
+      <div class="leak"><h3>Past customers</h3><p>Everyone you've ever worked for is a repeat job waiting to happen. Most of them never hear from you again.</p></div>
+      <div class="leak"><h3>Reviews</h3><p>Happy customers don't leave reviews unless you ask at the right time. Fewer reviews means fewer calls next month.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="system">
+  <div class="wrap">
+    <h2>What we install</h2>
+    <p class="intro">One system that follows every lead from the first call to the paid invoice. It runs on your business number and your calendar. You don't log into anything.</p>
+    <ol class="system">
+      <li><h3>Missed call text back</h3><p>Every missed call gets a text within a minute, day or night, so the customer talks to you instead of calling someone else.</p></li>
+      <li><h3>Instant lead response</h3><p>Form fills and ad leads get an immediate reply that asks the right questions: what's wrong, where, how urgent.</p></li>
+      <li><h3>Booking and reminders</h3><p>Leads book straight into your calendar. Reminder texts go out before every appointment to cut no-shows.</p></li>
+      <li><h3>Estimate follow-up</h3><p>If a quote isn't accepted, the system follows up for you over the next two weeks until you get a yes or a no.</p></li>
+      <li><h3>Review requests</h3><p>After the job is paid, customers get a text asking for a Google review while the work is fresh.</p></li>
+      <li><h3>Past customer reactivation</h3><p>Your old customer list gets seasonal check-ins: water heater flushes, winter prep, drain maintenance. Repeat work without cold calling.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <h2>How we start</h2>
+    <p class="intro">No long onboarding. You keep running jobs while we set it up.</p>
+    <div class="steps">
+      <div><span class="n">Step 1</span><h3>Free audit</h3><p>We call your business after hours and show you exactly what a customer experiences. Then we walk through where jobs are slipping.</p></div>
+      <div><span class="n">Step 2</span><h3>Setup</h3><p>We build the system on your number and your calendar and load your past customer list. You approve the messages before anything goes out.</p></div>
+      <div><span class="n">Step 3</span><h3>Go live</h3><p>The system runs in the background. You get a simple report showing leads, bookings, and jobs won.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block audit" id="audit">
+  <div class="wrap">
+    <div>
+      <h2>Get a free missed call audit</h2>
+      <p class="intro">Fill this out and we'll reach out to set up a 15 minute call. On the call you'll see:</p>
+      <ul>
+        <li>What happens right now when a customer calls you after hours</li>
+        <li>Where leads are dropping between the first call and the invoice</li>
+        <li>What the system would look like running on your business</li>
+      </ul>
+    </div>
+
+    <!--
+      OPTION A (easiest, guaranteed sync): build this form inside Hexona (Sites > Forms),
+      copy its embed code, and replace the entire <form> below with it.
+      OPTION B: keep this form and paste your Hexona inbound webhook URL into WEBHOOK_URL
+      in the script at the bottom of the page.
+    -->
+    <form id="lead-form" novalidate>
+      <div class="row">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required><div class="err" id="name-err">Enter your name.</div></div>
+        <div class="field"><label for="business">Business name</label><input id="business" name="business" type="text" autocomplete="organization" required><div class="err" id="business-err">Enter your business name.</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="phone">Mobile phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required><div class="err" id="phone-err">Enter a 10 digit phone number.</div></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><div class="err" id="email-err">Enter a valid email.</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="area">Service area</label><input id="area" name="area" type="text" placeholder="e.g. Bergen County" required><div class="err" id="area-err">Enter your service area.</div></div>
+        <div class="field"><label for="missed">Calls you miss per week</label>
+          <select id="missed" name="missed">
+            <option value="Not sure">Not sure</option>
+            <option value="1-5">1 to 5</option>
+            <option value="6-15">6 to 15</option>
+            <option value="16+">16 or more</option>
+          </select>
+        </div>
+      </div>
+      <div class="consent">
+        <input id="consent" name="consent" type="checkbox" required>
+        <label for="consent" style="font-weight:400;font-size:13px;margin:0">I agree to receive calls and text messages from Elvyn Automation at the number above, including automated messages, about my inquiry. Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</label>
+      </div>
+      <div class="err" id="consent-err" style="margin-top:-12px;margin-bottom:14px">Check the box so we can text you about your audit.</div>
+      <button class="btn btn-primary" type="submit" id="submit-btn">Request my free audit</button>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="block faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Do I have to learn new software?</summary><p>No. We build and run it. You get texts and calendar bookings like you do now, just more of them. If you want to see inside the dashboard, you can, but you don't have to.</p></details>
+    <details><summary>Will my customers know it's automated?</summary><p>The messages are written in your voice and sent from a local number tied to your business. You approve every message before it goes live.</p></details>
+    <details><summary>What if I already have a CRM or booking tool?</summary><p>Tell us what you use on the audit call. In most cases we connect to what you have or replace the parts that aren't doing anything for you.</p></details>
+    <details><summary>What does it cost?</summary><p>It depends on your call volume and service area. We go over pricing on the audit call once we know what your business actually needs.</p></details>
+    <details><summary>Who is this for?</summary><p>Plumbing companies in New Jersey that are busy enough to miss calls and want every lead followed up without hiring someone to do it.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Elvyn Automation. New Jersey.</span>
+    <span><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+const WEBHOOK_URL = ""; // paste your Hexona inbound webhook URL here
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+const form = document.getElementById("lead-form");
+const statusEl = document.getElementById("status");
+const checks = {
+  name: v => v.trim().length > 1,
+  business: v => v.trim().length > 1,
+  phone: v => v.replace(/\D/g, "").replace(/^1/, "").length === 10,
+  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+  area: v => v.trim().length > 1
+};
+
+Object.keys(checks).forEach(id => {
+  document.getElementById(id).addEventListener("input", () => document.getElementById(id + "-err").classList.remove("show"));
+});
+document.getElementById("consent").addEventListener("change", () => document.getElementById("consent-err").classList.remove("show"));
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  statusEl.textContent = ""; statusEl.className = "status";
+  let valid = true, firstBad = null;
+  for (const [id, test] of Object.entries(checks)) {
+    const el = document.getElementById(id);
+    const ok = test(el.value);
+    document.getElementById(id + "-err").classList.toggle("show", !ok);
+    if (!ok) { valid = false; firstBad = firstBad || el; }
+  }
+  const consent = document.getElementById("consent");
+  document.getElementById("consent-err").classList.toggle("show", !consent.checked);
+  if (!consent.checked) { valid = false; firstBad = firstBad || consent; }
+  if (!valid) { firstBad.focus(); return; }
+
+  if (!WEBHOOK_URL) {
+    statusEl.textContent = "This form isn't connected yet. Add the webhook URL or swap in the Hexona form embed.";
+    statusEl.classList.add("bad");
+    return;
+  }
+
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true; btn.textContent = "Sending...";
+  const data = new URLSearchParams({
+    name: form.name.value.trim(),
+    business_name: form.business.value.trim(),
+    phone: form.phone.value.trim(),
+    email: form.email.value.trim(),
+    service_area: form.area.value.trim(),
+    missed_calls_per_week: form.missed.value,
+    sms_consent: "yes",
+    consent_timestamp: new Date().toISOString(),
+    source: "elvyn-automation-landing"
+  });
+  try {
+    await fetch(WEBHOOK_URL, { method: "POST", mode: "no-cors", body: data });
+    form.reset();
+    statusEl.textContent = "Request sent. We'll text you shortly to set up your audit.";
+    statusEl.classList.add("ok");
+  } catch (err) {
+    statusEl.textContent = "The request didn't go through. Check your connection and try again.";
+    statusEl.classList.add("bad");
+  } finally {
+    btn.disabled = false; btn.textContent = "Request my free audit";
+  }
+});
+</script>
+</body>
+</html>
