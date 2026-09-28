@@ -2,59 +2,62 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elvyn Automation | Stop losing plumbing jobs to missed calls</title>
-<meta name="description" content="Elvyn Automation installs a follow-up system for plumbing companies in New Jersey. Missed call text back, booking, estimate follow-up, and reviews, all automatic.">
+<title>Elvyn Automations | Stop losing plumbing jobs to missed calls</title>
+<meta name="description" content="Elvyn Automations installs a follow-up system for plumbing companies in New Jersey. Missed call text back, booking, estimate follow-up, and reviews, all automatic.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0F2440; --steel:#5B6670; --line:#D5DBE1; --paper:#EEF1F4; --white:#FFFFFF;
-  --tape:#F2C230; --tape-dark:#6B5207; --red:#C8392B; --green:#1F7A4D;
+  --bg:#000000; --raised:#0B0E13; --panel:#12161D; --line:#252B34;
+  --text:#FFFFFF; --muted:#AEB6C2; --dim:#7D8693;
+  --blue:#5AB0FF; --blue-hover:#7FC2FF; --blue-ink:#001A33; --blue-tint:#0D2238;
+  --red:#FF7A6B; --red-tint:#2E1210; --green:#5FD49A; --green-tint:#0E2A1D;
   --display:"Archivo","Arial Narrow",Arial,sans-serif;
   --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--navy);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-img{max-width:100%}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--tape);outline-offset:3px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-header.top{border-bottom:1px solid var(--line);background:var(--white)}
+header.top{border-bottom:1px solid var(--line);background:var(--bg)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:20px;letter-spacing:-.01em;text-decoration:none}
-.logo span{font-weight:500;font-stretch:100%;color:var(--steel)}
-.btn{display:inline-block;font-family:var(--display);font-weight:800;font-stretch:105%;font-size:17px;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid var(--navy);cursor:pointer;line-height:1.1}
-.btn-primary{background:var(--tape);color:var(--navy);border-color:var(--tape)}
-.btn-primary:hover{background:#E5B31E;border-color:#E5B31E}
-.btn-ghost{background:transparent;color:var(--navy)}
-.btn-ghost:hover{background:var(--paper)}
+.logo span{font-weight:500;font-stretch:100%;color:var(--blue)}
+.btn{display:inline-block;font-family:var(--display);font-weight:800;font-stretch:105%;font-size:17px;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid var(--text);cursor:pointer;line-height:1.1}
+.btn-primary{background:var(--blue);color:var(--blue-ink);border-color:var(--blue)}
+.btn-primary:hover{background:var(--blue-hover);border-color:var(--blue-hover)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
 .btn-small{padding:10px 16px;font-size:15px}
 
-.hero{background:var(--paper);border-bottom:1px solid var(--line)}
+.hero{background:var(--bg);border-bottom:1px solid var(--line)}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:80px}
 .hero h1{font-family:var(--display);font-weight:900;font-stretch:78%;font-size:clamp(46px,7vw,88px);line-height:.92;letter-spacing:-.02em;margin:0 0 24px}
-.hero p.lede{font-size:19px;max-width:34em;margin:0 0 32px;color:#23364F}
+.hero p.lede{font-size:19px;max-width:34em;margin:0 0 32px;color:var(--muted)}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
 
-.log{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 0 var(--line)}
+.log{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
 .log-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
 .log-head strong{font-family:var(--display);font-weight:800;font-size:18px}
-.log-head span{font-size:14px;color:var(--steel)}
+.log-head span{font-size:14px;color:var(--dim)}
 .ev{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:10px 0}
-.ev time{font-size:14px;color:var(--steel);padding-top:2px;font-variant-numeric:tabular-nums}
+.ev time{font-size:14px;color:var(--dim);padding-top:2px;font-variant-numeric:tabular-nums}
 .ev .what{font-size:15px}
 .tag{display:inline-block;font-size:13px;font-weight:600;padding:2px 8px;border-radius:4px;margin-bottom:4px}
-.tag.missed{background:#FBE3E0;color:#7A1F16}
-.tag.auto{background:#FDF3CF;color:var(--tape-dark)}
-.tag.reply{background:var(--paper);color:var(--navy)}
-.tag.booked{background:#DDF1E6;color:#124A2F}
-.bubble{background:var(--paper);border-radius:10px;padding:10px 12px;margin-top:4px;font-size:15px;line-height:1.45}
-.bubble.out{background:var(--navy);color:var(--white)}
-.log-foot{border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:14px;color:var(--steel)}
+.tag.missed{background:var(--red-tint);color:var(--red)}
+.tag.auto{background:var(--blue-tint);color:var(--blue)}
+.tag.reply{background:#1B2028;color:var(--muted)}
+.tag.booked{background:var(--green-tint);color:var(--green)}
+.bubble{background:#1B2028;border-radius:10px;padding:10px 12px;margin-top:4px;font-size:15px;line-height:1.45}
+.bubble.out{background:var(--blue);color:var(--blue-ink)}
+.log-foot{border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:14px;color:var(--dim)}
 @media (prefers-reduced-motion:no-preference){
   .ev{opacity:0;transform:translateY(6px);animation:in .45s ease forwards}
   .ev:nth-child(2){animation-delay:.2s}.ev:nth-child(3){animation-delay:.9s}.ev:nth-child(4){animation-delay:1.6s}.ev:nth-child(5){animation-delay:2.3s}
@@ -63,39 +66,39 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 
 section.block{padding:88px 0;border-bottom:1px solid var(--line)}
 h2{font-family:var(--display);font-weight:900;font-stretch:85%;font-size:clamp(34px,4.5vw,52px);line-height:1;letter-spacing:-.015em;margin:0 0 16px}
-.intro{max-width:36em;color:#23364F;margin:0 0 48px}
+.intro{max-width:36em;color:var(--muted);margin:0 0 48px}
 
-.leaks{border-top:2px solid var(--navy)}
+.leaks{border-top:2px solid var(--blue)}
 .leak{display:grid;grid-template-columns:280px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--line)}
 .leak h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0;line-height:1.2}
-.leak p{margin:0;max-width:40em}
+.leak p{margin:0;max-width:40em;color:var(--muted)}
 
-.system{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--navy);border-left:1px solid var(--line)}
+.system{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--blue);border-left:1px solid var(--line)}
 .system li{counter-increment:s;padding:28px 24px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.system li::before{content:counter(s);display:block;font-family:var(--display);font-weight:900;font-stretch:78%;font-size:44px;line-height:1;color:var(--tape-dark);margin-bottom:14px}
+.system li::before{content:counter(s);display:block;font-family:var(--display);font-weight:900;font-stretch:78%;font-size:44px;line-height:1;color:var(--blue);margin-bottom:14px}
 .system h3{font-family:var(--display);font-weight:800;font-size:21px;margin:0 0 8px;line-height:1.2}
-.system p{margin:0;font-size:16px;color:#23364F}
+.system p{margin:0;font-size:16px;color:var(--muted)}
 
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
 .steps h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0 0 8px}
-.steps p{margin:0;color:#23364F}
-.steps .n{font-family:var(--display);font-weight:900;font-size:15px;color:var(--steel);margin-bottom:6px;display:block}
+.steps p{margin:0;color:var(--muted)}
+.steps .n{font-family:var(--display);font-weight:900;font-size:15px;color:var(--blue);margin-bottom:6px;display:block}
 
-.audit{background:var(--navy);color:var(--white)}
+.audit{background:var(--raised)}
 .audit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.audit h2{color:var(--white)}
-.audit .intro{color:#C9D3DF}
-.audit ul{padding-left:20px;margin:0;color:#C9D3DF}
+.audit ul{padding-left:20px;margin:0;color:var(--muted)}
 .audit li{margin-bottom:8px}
-form{background:var(--white);color:var(--navy);border-radius:14px;padding:28px}
+.audit li::marker{color:var(--blue)}
+form{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:28px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{margin-bottom:16px}
 label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
-input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #B7C0CA;border-radius:6px;background:var(--white);color:var(--navy)}
-input:focus,select:focus{outline:3px solid var(--tape);outline-offset:0;border-color:var(--navy)}
-.consent{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.5;color:var(--steel);margin:4px 0 20px}
-.consent input{width:18px;height:18px;margin-top:2px}
-.consent a{color:var(--navy)}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #39414D;border-radius:6px;background:var(--bg);color:var(--text)}
+input::placeholder{color:var(--dim)}
+input:focus,select:focus{outline:3px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+.consent{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:13px;line-height:1.5;color:var(--dim);margin:4px 0 20px}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--blue)}
+.consent a{color:var(--blue)}
 form .btn{width:100%;font-size:18px;padding:16px}
 .err{color:var(--red);font-size:14px;margin-top:6px;display:none}
 .err.show{display:block}
@@ -103,16 +106,17 @@ form .btn{width:100%;font-size:18px;padding:16px}
 .status.ok{color:var(--green)}.status.bad{color:var(--red)}
 
 .faq details{border-bottom:1px solid var(--line);padding:20px 0}
-.faq details:first-of-type{border-top:2px solid var(--navy)}
+.faq details:first-of-type{border-top:2px solid var(--blue)}
 .faq summary{font-family:var(--display);font-weight:800;font-size:21px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-weight:500;color:var(--steel)}
+.faq summary::after{content:"+";font-weight:500;color:var(--blue)}
 .faq details[open] summary::after{content:"\2212"}
-.faq details p{margin:12px 0 0;max-width:44em;color:#23364F}
+.faq details p{margin:12px 0 0;max-width:44em;color:var(--muted)}
 
-footer{padding:40px 0;font-size:14px;color:var(--steel)}
+footer{padding:40px 0;font-size:14px;color:var(--dim)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 footer a{margin-left:16px}
+footer a:hover{color:var(--blue)}
 
 @media (max-width:900px){
   .hero .wrap,.audit .wrap{grid-template-columns:1fr;gap:40px}
@@ -127,10 +131,9 @@ footer a{margin-left:16px}
   .hero .wrap{padding-top:48px;padding-bottom:56px}
   header.top .btn{display:none}
 }
-
 .sticky-cta{display:none}
 @media (max-width:560px){
-  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--white);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
   .sticky-cta.show{transform:none}
   .sticky-cta .btn{display:block;width:100%;text-align:center;padding:15px}
   footer{padding-bottom:96px}
@@ -142,7 +145,7 @@ footer a{margin-left:16px}
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#">Elvyn <span>Automation</span></a>
+    <a class="logo" href="#">Elvyn <span>Automations</span></a>
     <a class="btn btn-primary btn-small" href="#audit">Get a free audit</a>
   </div>
 </header>
@@ -152,7 +155,7 @@ footer a{margin-left:16px}
   <div class="wrap">
     <div>
       <h1>You're losing jobs you already paid for.</h1>
-      <p class="lede">Every missed call, quote that goes quiet, and past customer you never hear from again is money going to the next plumber on Google. Elvyn Automation installs a system that texts back, books, follows up, and asks for reviews on its own. You do the work. The calendar fills itself.</p>
+      <p class="lede">Every missed call, quote that goes quiet, and past customer you never hear from again is money going to the next plumber on Google. Elvyn Automations installs a system that texts back, books, follows up, and asks for reviews on its own. You do the work. The calendar fills itself.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#audit">Get a free missed call audit</a>
         <a class="btn btn-ghost" href="#system">See what we install</a>
@@ -241,13 +244,13 @@ footer a{margin-left:16px}
     data-activation-value=""
     data-deactivation-type="neverDeactivate"
     data-deactivation-value=""
-    data-form-name="ELVYN Automations Contact Form"
-    data-height="928"
+    data-form-name=" Contact Form"
+    data-height="936"
     data-layout-iframe-id="inline-uXSlhOlCeI6f8I9VoYSj"
     data-form-id="uXSlhOlCeI6f8I9VoYSj"
     data-cookie-consent="true"
     data-cookie-consent-provider="auto"
-    title="ELVYN Automations Contact Form"
+    title=" Contact Form"
     
         >
 </iframe>
@@ -270,7 +273,7 @@ footer a{margin-left:16px}
 
 <footer>
   <div class="wrap">
-    <span>&copy; <span id="yr"></span> Elvyn Automation. New Jersey.</span>
+    <span>&copy; <span id="yr"></span> Elvyn Automations, a trade name of ELVYN Labs LLC. New Jersey.</span>
     <span><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
   </div>
 </footer>
