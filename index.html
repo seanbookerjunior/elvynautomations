@@ -139,6 +139,12 @@ footer a:hover{color:var(--blue)}
   footer{padding-bottom:96px}
 }
 @media (prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
+  .about-grid{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center}
+.about-photo{position:relative;width:220px;aspect-ratio:1;border-radius:14px;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.about-photo span{font-family:var(--display);font-weight:900;font-size:72px;color:var(--blue)}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about p{color:var(--muted);max-width:40em;margin:0 0 16px}
+@media (max-width:700px){.about-grid{grid-template-columns:1fr;gap:24px}.about-photo{width:160px}}
 </style>
 </head>
 <body>
@@ -210,6 +216,21 @@ footer a:hover{color:var(--blue)}
       <div><span class="n">Step 1</span><h3>Free audit</h3><p>We call your business after hours and show you exactly what a customer experiences. Then we walk through where jobs are slipping.</p></div>
       <div><span class="n">Step 2</span><h3>Setup</h3><p>We build the system on your number and your calendar and load your past customer list. You approve the messages before anything goes out.</p></div>
       <div><span class="n">Step 3</span><h3>Go live</h3><p>The system runs in the background. You get a simple report showing leads, bookings, and jobs won.</p></div>
+    </div>
+  </div>
+</section>
+
+  <section class="block about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <span>S</span>
+      <img src="sean.jpg" alt="Sean, founder of Elvyn Automations" onerror="this.remove()">
+    </div>
+    <div>
+      <h2>Who you'll be working with</h2>
+      <p>I'm Sean. I'm based here in New Jersey and I build these systems myself. My background is in software engineering, so the setup, the automations, and any fixes go through me directly.</p>
+      <p>I started Elvyn Automations because local plumbers are great at the work and get buried by everything around it. Calls come in while you're under a sink. Estimates go out and nobody follows up. That's not a skill problem. It's a systems problem, and systems are what I build.</p>
+      <p>When you work with us, you talk to me. No sales team, no call center.</p>
     </div>
   </div>
 </section>
