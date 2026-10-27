@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Elvyn Automations | Stop losing plumbing jobs to missed calls</title>
+<title>Elvyn Automations | Stop losing jobs to voicemail</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath fill='%235AB0FF' d='M9 7h14v4h-9v3h8v4h-8v3h9v4H9z'/%3E%3C/svg%3E">
 <meta name="description" content="Elvyn Automations installs a follow-up system for plumbing companies. Missed call text back, booking, estimate follow-up, and reviews, all automatic.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,6 +151,29 @@ footer a:hover{color:var(--blue)}
 .video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-frame.vertical{aspect-ratio:9/16;max-width:380px}
+
+/* Headline -> VSL layout */
+.vsl{padding:56px 0 64px;border-bottom:1px solid var(--line);text-align:center}
+.vsl .wrap{max-width:920px}
+.vsl h1{font-family:var(--display);font-weight:900;font-stretch:78%;font-size:clamp(38px,6.2vw,76px);line-height:.95;letter-spacing:-.02em;margin:0 auto 20px;max-width:15em}
+.vsl h1 em{font-style:normal;color:var(--blue)}
+.vsl .sub{font-size:19px;color:var(--muted);max-width:36em;margin:0 auto 32px}
+.vsl .video-frame{margin:0 auto 28px;box-shadow:0 0 0 1px var(--line),0 24px 60px rgba(90,176,255,.12)}
+.vsl .btn{font-size:20px;padding:18px 32px}
+.vsl .micro{display:block;margin-top:12px;font-size:14px;color:var(--dim)}
+.points{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--blue);border-left:1px solid var(--line)}
+.points li{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.points h3{font-family:var(--display);font-weight:800;font-size:20px;margin:0 0 6px;line-height:1.2}
+.points p{margin:0;font-size:16px;color:var(--muted)}
+.book{background:var(--raised);text-align:center}
+.book .intro{margin-left:auto;margin-right:auto}
+.book-frame{max-width:860px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.book-frame iframe{display:block;width:100%;min-height:760px;border:0}
+.book .fallback{margin-top:16px;font-size:15px;color:var(--dim)}
+.book .fallback a{color:var(--blue)}
+@media (max-width:900px){.points{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.points{grid-template-columns:1fr}}
+@media (max-width:560px){.vsl{padding:36px 0 48px}.vsl .sub{font-size:17px}.vsl .btn{display:block;width:100%}}
 </style>
 </head>
 <body>
@@ -158,144 +181,55 @@ footer a:hover{color:var(--blue)}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#">Elvyn <span>Automations</span></a>
-    <a class="btn btn-primary btn-small" href="#audit">Get a free audit</a>
   </div>
 </header>
 
 <main>
-<section class="hero">
+<section class="vsl">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">For plumbing companies</span>
-      <h1>Missed calls are lost jobs. We fix that.</h1>
-      <p class="lede">Every missed call and unanswered quote is a job going to the next plumber on Google. We set up a system that texts back, books appointments, follows up, and gets you reviews automatically, so you can focus on the work.</p>
-      <div class="ctas">
-        <a class="btn btn-primary" href="#audit">Get a free missed call audit</a>
-        <a class="btn btn-ghost" href="#system">See what we install</a>
-      </div>
-    </div>
-
-    <div class="log" aria-label="Example of an after-hours missed call being booked automatically">
-      <div class="log-head"><strong>Your Plumbing Co.</strong><span>Tuesday</span></div>
-      <div class="ev"><time>7:42 PM</time><div class="what"><span class="tag missed">Missed call</span><br>(201) 555-0148</div></div>
-      <div class="ev"><time>7:42 PM</time><div class="what"><span class="tag auto">Auto text sent</span><div class="bubble out">Hey, sorry we missed your call. What's going on and what's the address? We'll get you taken care of.</div></div></div>
-      <div class="ev"><time>7:46 PM</time><div class="what"><span class="tag reply">Customer replied</span><div class="bubble">Water heater leaking in the basement. 14 Maple Ave, Clifton.</div></div></div>
-      <div class="ev"><time>7:47 PM</time><div class="what"><span class="tag booked">Booked</span><br>Wednesday, 9:00 AM. Reminder scheduled.</div></div>
-      <div class="log-foot">Nobody picked up the phone. The job still got booked.</div>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap video-wrap">
-    <h2>See how it works</h2>
-    <p class="intro">A 2 minute walkthrough of what happens when a customer calls and you can't pick up.</p>
+    <span class="eyebrow">For plumbing companies</span>
+    <h1>Stop losing jobs to voicemail and <em>start booking them while you sleep.</em></h1>
+    <p class="sub">Every missed call gets a text back in seconds, so the customer books with you instead of the next plumber on Google. Watch the 2 minute video to see how.</p>
     <div class="video-frame">
-      <iframe src="https://www.youtube-nocookie.com/embed/mlzb4YM8nyQ?rel=0" title="How the Job Recovery System works" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/mlzb4YM8nyQ?rel=0&amp;modestbranding=1" title="How the Job Recovery System works" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <a class="btn btn-primary" href="#book">Book a free 15 minute call</a>
+    <span class="micro">Free. No obligation. We'll show you what happens when a customer calls you after hours.</span>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <h2>Where the money leaks</h2>
-    <p class="intro">Most plumbing companies don't have a lead problem. They have a follow-up problem. These are the spots where jobs fall through.</p>
-    <div class="leaks">
-      <div class="leak"><h3>After-hours calls</h3><p>Someone with water on their floor isn't leaving a voicemail. If you don't pick up, they call the next number.</p></div>
-      <div class="leak"><h3>Quotes that go quiet</h3><p>You drove out, looked at the job, and sent a number. Then nothing, because nobody followed up.</p></div>
-      <div class="leak"><h3>No-shows</h3><p>The appointment was booked, nobody reminded them, and your tech showed up to an empty house.</p></div>
-      <div class="leak"><h3>Past customers</h3><p>Everyone you've ever worked for is a repeat job waiting to happen. Most of them never hear from you again.</p></div>
-      <div class="leak"><h3>Reviews</h3><p>Happy customers don't leave reviews unless you ask at the right time. Fewer reviews means fewer calls next month.</p></div>
-    </div>
+    <h2>What runs while you work</h2>
+    <p class="intro">One system on your business number. Your part is a couple of taps on your phone.</p>
+    <ul class="points">
+      <li><h3>Missed call text back</h3><p>Every missed call gets a text within a minute, day or night.</p></li>
+      <li><h3>Booking and reminders</h3><p>Leads book into times you choose, with reminders that cut no-shows.</p></li>
+      <li><h3>Follow-up and reviews</h3><p>Estimates get followed up automatically and finished jobs get a Google review request.</p></li>
+      <li><h3>Past customer reactivation</h3><p>Old customers get seasonal check-ins like water heater flushes and winter pipe prep. Repeat work without cold calling.</p></li>
+    </ul>
   </div>
 </section>
 
-<section class="block" id="system">
+<section class="block book" id="book">
   <div class="wrap">
-    <h2>What we install</h2>
-    <p class="intro">One system that follows every lead from the first call to the paid invoice. It runs on your business number and your calendar. Your part is a couple of taps on your phone.</p>
-    <ol class="system">
-      <li><h3>Missed call text back</h3><p>Every missed call gets a text within a minute, day or night, so the customer talks to you instead of calling someone else.</p></li>
-      <li><h3>Instant lead response</h3><p>Form fills and ad leads get an immediate reply that asks the right questions: what's wrong, where, how urgent.</p></li>
-      <li><h3>Booking and reminders</h3><p>Leads can book into times you choose, or you schedule them yourself. Either way, reminder texts go out before every appointment to cut no-shows.</p></li>
-      <li><h3>Estimate follow-up</h3><p>Tap once to mark an estimate as sent. If it isn't accepted, the system follows up for you over the next two weeks until you get a yes or a no.</p></li>
-      <li><h3>Review requests</h3><p>When you mark a job done, the customer gets a text asking for a Google review while the work is fresh.</p></li>
-      <li><h3>Past customer reactivation</h3><p>Your old customer list gets seasonal check-ins: water heater flushes, drain maintenance, winter pipe prep. Repeat work without cold calling.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <h2>How we start</h2>
-    <p class="intro">No long onboarding. You keep running jobs while we set it up.</p>
-    <div class="steps">
-      <div><span class="n">Step 1</span><h3>Free audit</h3><p>We call your business after hours and show you exactly what a customer experiences. Then we walk through where jobs are slipping.</p></div>
-      <div><span class="n">Step 2</span><h3>Setup</h3><p>We build the system on your number and your calendar and load your past customer list. You approve the messages before anything goes out.</p></div>
-      <div><span class="n">Step 3</span><h3>Go live</h3><p>The system runs in the background. You get a simple report showing leads, bookings, and jobs won.</p></div>
+    <h2>Book your free 15 minute call</h2>
+    <p class="intro">Pick a time. On the call we'll show you exactly what your customers experience when you can't pick up.</p>
+    <div class="book-frame">
+      <iframe src="https://links.elvynautomations.com/widget/bookings/book-with-elvyn-automations" id="book-with-elvyn-automations" scrolling="no" title="Book a call with Elvyn Automations"></iframe>
     </div>
-  </div>
-</section>
-
-<!-- <section class="block about">
-  <div class="wrap about-grid">
-    <div class="about-photo">
-      <span>S</span>
-      <img src="sean.jpg" alt="Sean, founder of Elvyn Automations" onerror="this.remove()">
-    </div>
-    <div>
-      <h2>Who you'll be working with</h2>
-      <p>I'm Sean. I'm based here in New Jersey and I build these systems myself. My background is in software engineering, so the setup, the automations, and any fixes go through me directly.</p>
-      <p>I started Elvyn Automations because local tradespeople are great at the work and get buried by everything around it. Calls come in while you're on a job. Estimates go out and nobody follows up. That's not a skill problem. It's a systems problem, and systems are what I build.</p>
-      <p>When you work with us, you talk to me. No sales team, no call center.</p>
-    </div>
-  </div>
-</section> -->
-
-<section class="block audit" id="audit">
-  <div class="wrap">
-    <div>
-      <h2>Get a free missed call audit</h2>
-      <p class="intro">Fill this out and we'll reach out to set up a 15 minute call. On the call you'll see:</p>
-      <ul>
-        <li>What happens right now when a customer calls you after hours</li>
-        <li>Where leads are dropping between the first call and the invoice</li>
-        <li>What the system would look like running on your business</li>
-      </ul>
-    </div>
-
-    <iframe
-    src="https://links.elvynautomations.com/widget/form/uXSlhOlCeI6f8I9VoYSj"
-    style="width:100%;height:842px;border:none;border-radius:4px"
-    id="inline-uXSlhOlCeI6f8I9VoYSj"
-    data-layout="{'id':'INLINE'}"
-    data-trigger-type="alwaysShow"
-    data-trigger-value=""
-    data-activation-type="alwaysActivated"
-    data-activation-value=""
-    data-deactivation-type="neverDeactivate"
-    data-deactivation-value=""
-    data-form-name=" Contact Form"
-    data-height="842"
-    data-layout-iframe-id="inline-uXSlhOlCeI6f8I9VoYSj"
-    data-form-id="uXSlhOlCeI6f8I9VoYSj"
-    data-cookie-consent="true"
-    data-cookie-consent-provider="auto"
-    title=" Contact Form">
-</iframe>
-<script src="https://links.elvynautomations.com/js/form_embed.js"></script>
+    <p class="fallback">Calendar not loading? <a href="https://links.elvynautomations.com/widget/bookings/book-with-elvyn-automations" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+    <script src="https://links.elvynautomations.com/js/form_embed.js" type="text/javascript"></script>
   </div>
 </section>
 
 <section class="block faq">
   <div class="wrap">
     <h2>Questions</h2>
-    <details><summary>Do I have to learn new software?</summary><p>No. We build and run it. You get texts and bookings on your phone like you do now, just more of them. Your only part is tapping once when you send an estimate or finish a job.</p></details>
+    <details><summary>Do I have to learn new software?</summary><p>No. We build and run it. You get texts and bookings on your phone like you do now, just more of them.</p></details>
     <details><summary>Will my customers know it's automated?</summary><p>The messages are written in your voice and sent from a local number tied to your business. You approve every message before it goes live.</p></details>
-    <details><summary>Can I control when customers book?</summary><p>Yes. Customers can book themselves into times you choose, send requests you approve before anything hits your calendar, or you can schedule everyone yourself. The system just makes sure every lead gets a reply right away so they don't call someone else while you're busy.</p></details>
-    <details><summary>What if I already have a CRM or booking tool?</summary><p>Tell us what you use on the audit call. In most cases we connect to what you have or replace the parts that aren't doing anything for you.</p></details>
-    <details><summary>What does it cost?</summary><p>It depends on your call volume and service area. We go over pricing on the audit call once we know what your business actually needs.</p></details>
-    <details><summary>Who is this for?</summary><p>Plumbing companies, from one-truck shops to growing teams, that are busy enough to miss calls and want every lead followed up without hiring someone to do it.</p></details>
+    <details><summary>Can I control when customers book?</summary><p>Yes. Customers can book into times you choose, send requests you approve, or you can schedule everyone yourself.</p></details>
+    <details><summary>What does it cost?</summary><p>It depends on your call volume and service area. We go over pricing on the call once we know what your business needs.</p></details>
   </div>
 </section>
 </main>
@@ -307,17 +241,17 @@ footer a:hover{color:var(--blue)}
   </div>
 </footer>
 
-<div class="sticky-cta" id="sticky-cta"><a class="btn btn-primary" href="#audit">Get a free audit</a></div>
+<div class="sticky-cta" id="sticky-cta"><a class="btn btn-primary" href="#book">Book a free call</a></div>
 
 <script>
 (function(){
   var bar=document.getElementById("sticky-cta");
-  var hero=document.querySelector(".hero");
-  var audit=document.getElementById("audit");
-  var pastHero=false, atForm=false;
-  function update(){bar.classList.toggle("show", pastHero && !atForm);}
-  new IntersectionObserver(function(e){pastHero=!e[0].isIntersecting;update();}).observe(hero);
-  new IntersectionObserver(function(e){atForm=e[0].isIntersecting;update();},{threshold:0.15}).observe(audit);
+  var top=document.querySelector(".vsl");
+  var book=document.getElementById("book");
+  var pastTop=false, atBook=false;
+  function update(){bar.classList.toggle("show", pastTop && !atBook);}
+  new IntersectionObserver(function(e){pastTop=!e[0].isIntersecting;update();}).observe(top);
+  new IntersectionObserver(function(e){atBook=e[0].isIntersecting;update();},{threshold:0.15}).observe(book);
 })();
 </script>
 
